@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="FirstName" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="DateOfBith" Type="datetime" Nullable="false" />
+          <Property Name="Address" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Experience" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand" Type="nchar" MaxLength="15" Nullable="false" />
+          <Property Name="IdTypeBus" Type="int" Nullable="false" />
+          <Property Name="IdCondition" Type="int" Nullable="false" />
+          <Property Name="NumberOfSeats" Type="int" Nullable="false" />
+          <Property Name="GovernmentNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdDriver" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeBus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Bus_Condition">
+          <End Role="Condition" Type="Self.Condition" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdCondition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bus_Driver">
+          <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdDriver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bus_TypeBus">
+          <End Role="TypeBus" Type="Self.TypeBus" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeBus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdTypeBus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DBModelContainer">
+          <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeBus" EntityType="Self.TypeBus" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bus_Condition" Association="Self.FK_Bus_Condition">
+            <End Role="Condition" EntitySet="Condition" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bus_Driver" Association="Self.FK_Bus_Driver">
+            <End Role="Driver" EntitySet="Driver" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bus_TypeBus" Association="Self.FK_Bus_TypeBus">
+            <End Role="TypeBus" EntitySet="TypeBus" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Condition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Table" Relationship="Self.FK_Bus_Condition" FromRole="Condition" ToRole="Table" />
+        </EntityType>
+        <EntityType Name="Driver">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBith" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Experience" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Table" Relationship="Self.FK_Bus_Driver" FromRole="Driver" ToRole="Table" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdTypeBus" Type="Int32" Nullable="false" />
+          <Property Name="IdCondition" Type="Int32" Nullable="false" />
+          <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
+          <Property Name="GovernmentNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdDriver" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Condition" Relationship="Self.FK_Bus_Condition" FromRole="Table" ToRole="Condition" />
+          <NavigationProperty Name="Driver" Relationship="Self.FK_Bus_Driver" FromRole="Table" ToRole="Driver" />
+          <NavigationProperty Name="TypeBus" Relationship="Self.FK_Bus_TypeBus" FromRole="Table" ToRole="TypeBus" />
+        </EntityType>
+        <EntityType Name="TypeBus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Table" Relationship="Self.FK_Bus_TypeBus" FromRole="TypeBus" ToRole="Table" />
+        </EntityType>
+        <Association Name="FK_Bus_Condition">
+          <End Role="Condition" Type="Self.Condition" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Condition">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdCondition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bus_Driver">
+          <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Driver">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdDriver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bus_TypeBus">
+          <End Role="TypeBus" Type="Self.TypeBus" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeBus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="IdTypeBus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Condition" EntityType="Self.Condition" />
+          <EntitySet Name="Driver" EntityType="Self.Driver" />
+          <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="TypeBus" EntityType="Self.TypeBus" />
+          <AssociationSet Name="FK_Bus_Condition" Association="Self.FK_Bus_Condition">
+            <End Role="Condition" EntitySet="Condition" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bus_Driver" Association="Self.FK_Bus_Driver">
+            <End Role="Driver" EntitySet="Driver" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bus_TypeBus" Association="Self.FK_Bus_TypeBus">
+            <End Role="TypeBus" EntitySet="TypeBus" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Condition">
+            <EntityTypeMapping TypeName="DBModel.Condition">
+              <MappingFragment StoreEntitySet="Condition">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Driver">
+            <EntityTypeMapping TypeName="DBModel.Driver">
+              <MappingFragment StoreEntitySet="Driver">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="DateOfBith" ColumnName="DateOfBith" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table">
+            <EntityTypeMapping TypeName="DBModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="IdTypeBus" ColumnName="IdTypeBus" />
+                <ScalarProperty Name="IdCondition" ColumnName="IdCondition" />
+                <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
+                <ScalarProperty Name="GovernmentNumber" ColumnName="GovernmentNumber" />
+                <ScalarProperty Name="IdDriver" ColumnName="IdDriver" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeBus">
+            <EntityTypeMapping TypeName="DBModel.TypeBus">
+              <MappingFragment StoreEntitySet="TypeBus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
