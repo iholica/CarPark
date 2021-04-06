@@ -119,6 +119,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="ModelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -160,6 +161,15 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
       <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\search.png" />
+    <None Include="Resources\files.png" />
+    <None Include="Resources\icons8-sync-settings-24.png" />
+    <None Include="Resources\icons8-maintenance-24.png" />
+    <None Include="Resources\icons8-three-way-direction-24.png" />
+    <None Include="Resources\icons8-delivery-time-24.png" />
+    <None Include="Resources\pin.png" />
+    <None Include="Resources\bus.png" />
+    <None Include="Resources\driver.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
