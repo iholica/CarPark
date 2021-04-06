@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Condition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Bus_Condition" FromRole="Condition" ToRole="Table" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBith" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Experience" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Bus_Driver" FromRole="Driver" ToRole="Table" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brand" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IdTypeBus" Type="Int32" Nullable="false" />
+    <Property Name="IdCondition" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
+    <Property Name="GovernmentNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IdDriver" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Condition" Relationship="Self.FK_Bus_Condition" FromRole="Table" ToRole="Condition" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_Bus_Driver" FromRole="Table" ToRole="Driver" />
+    <NavigationProperty Name="TypeBus" Relationship="Self.FK_Bus_TypeBus" FromRole="Table" ToRole="TypeBus" />
+  </EntityType>
+  <EntityType Name="TypeBus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Bus_TypeBus" FromRole="TypeBus" ToRole="Table" />
+  </EntityType>
+  <Association Name="FK_Bus_Condition">
+    <End Role="Condition" Type="Self.Condition" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Condition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="IdCondition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bus_Driver">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="IdDriver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bus_TypeBus">
+    <End Role="TypeBus" Type="Self.TypeBus" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeBus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="IdTypeBus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Condition" EntityType="Self.Condition" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" />
+    <EntitySet Name="Table" EntityType="Self.Table" />
+    <EntitySet Name="TypeBus" EntityType="Self.TypeBus" />
+    <AssociationSet Name="FK_Bus_Condition" Association="Self.FK_Bus_Condition">
+      <End Role="Condition" EntitySet="Condition" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bus_Driver" Association="Self.FK_Bus_Driver">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bus_TypeBus" Association="Self.FK_Bus_TypeBus">
+      <End Role="TypeBus" EntitySet="TypeBus" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
