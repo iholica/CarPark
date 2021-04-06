@@ -25,5 +25,11 @@ namespace CarPark
             FormTypesOfBuses form = new FormTypesOfBuses();
             form.Show();
         }
+        //состояние
+        private void состояниеАвтобусовToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormConditions form = new FormConditions();
+            form.Show();
+        }
     }
 }
