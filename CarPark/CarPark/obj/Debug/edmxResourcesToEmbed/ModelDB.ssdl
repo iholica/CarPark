@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище DBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="IdTypeBus" Type="int" Nullable="false" />
+    <Property Name="IdCondition" Type="int" Nullable="false" />
+    <Property Name="NumberOfSeats" Type="int" Nullable="false" />
+    <Property Name="GovernmentNumber" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdDriver" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Condition">
     <Key>
       <PropertyRef Name="Id" />
@@ -19,18 +31,6 @@
     <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Experience" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <EntityType Name="Table">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Brand" Type="nchar" MaxLength="15" Nullable="false" />
-    <Property Name="IdTypeBus" Type="int" Nullable="false" />
-    <Property Name="IdCondition" Type="int" Nullable="false" />
-    <Property Name="NumberOfSeats" Type="int" Nullable="false" />
-    <Property Name="GovernmentNumber" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="IdDriver" Type="int" Nullable="false" />
-  </EntityType>
   <EntityType Name="TypeBus">
     <Key>
       <PropertyRef Name="Id" />
@@ -40,56 +40,56 @@
   </EntityType>
   <Association Name="FK_Bus_Condition">
     <End Role="Condition" Type="Self.Condition" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Condition">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Table">
+      <Dependent Role="Bus">
         <PropertyRef Name="IdCondition" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Bus_Driver">
     <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Driver">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Table">
+      <Dependent Role="Bus">
         <PropertyRef Name="IdDriver" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Bus_TypeBus">
     <End Role="TypeBus" Type="Self.TypeBus" Multiplicity="1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TypeBus">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Table">
+      <Dependent Role="Bus">
         <PropertyRef Name="IdTypeBus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Хранилище DBModelContainer">
+    <EntitySet Name="Bus" EntityType="Self.Bus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeBus" EntityType="Self.TypeBus" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Bus_Condition" Association="Self.FK_Bus_Condition">
       <End Role="Condition" EntitySet="Condition" />
-      <End Role="Table" EntitySet="Table" />
+      <End Role="Bus" EntitySet="Bus" />
     </AssociationSet>
     <AssociationSet Name="FK_Bus_Driver" Association="Self.FK_Bus_Driver">
       <End Role="Driver" EntitySet="Driver" />
-      <End Role="Table" EntitySet="Table" />
+      <End Role="Bus" EntitySet="Bus" />
     </AssociationSet>
     <AssociationSet Name="FK_Bus_TypeBus" Association="Self.FK_Bus_TypeBus">
       <End Role="TypeBus" EntitySet="TypeBus" />
-      <End Role="Table" EntitySet="Table" />
+      <End Role="Bus" EntitySet="Bus" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
