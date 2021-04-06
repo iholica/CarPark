@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities1">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DBModelContainer" CdmEntityContainer="DBEntities2">
     <EntitySetMapping Name="Bus">
       <EntityTypeMapping TypeName="DBModel.Bus">
         <MappingFragment StoreEntitySet="Bus">
@@ -10,7 +10,6 @@
           <ScalarProperty Name="IdCondition" ColumnName="IdCondition" />
           <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
           <ScalarProperty Name="GovernmentNumber" ColumnName="GovernmentNumber" />
-          <ScalarProperty Name="IdDriver" ColumnName="IdDriver" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,6 +31,7 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="IdBus" ColumnName="IdBus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

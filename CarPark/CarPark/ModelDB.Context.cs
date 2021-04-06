@@ -13,10 +13,10 @@ namespace CarPark
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBEntities1 : DbContext
+    public partial class DBEntities2 : DbContext
     {
-        public DBEntities1()
-            : base("name=DBEntities1")
+        public DBEntities2()
+            : base("name=DBEntities2")
         {
         }
     

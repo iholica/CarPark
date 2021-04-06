@@ -10,7 +10,6 @@
     <Property Name="IdCondition" Type="int" Nullable="false" />
     <Property Name="NumberOfSeats" Type="int" Nullable="false" />
     <Property Name="GovernmentNumber" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="IdDriver" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Condition">
     <Key>
@@ -30,6 +29,7 @@
     <Property Name="Address" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Experience" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdBus" Type="int" />
   </EntityType>
   <EntityType Name="TypeBus">
     <Key>
@@ -50,18 +50,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Bus_Driver">
-    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
-    <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Driver">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Bus">
-        <PropertyRef Name="IdDriver" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Bus_TypeBus">
     <End Role="TypeBus" Type="Self.TypeBus" Multiplicity="1" />
     <End Role="Bus" Type="Self.Bus" Multiplicity="*" />
@@ -74,6 +62,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Driver_Bus">
+    <End Role="Bus" Type="Self.Bus" Multiplicity="0..1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="IdBus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище DBModelContainer">
     <EntitySet Name="Bus" EntityType="Self.Bus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Condition" EntityType="Self.Condition" Schema="dbo" store:Type="Tables" />
@@ -83,13 +83,13 @@
       <End Role="Condition" EntitySet="Condition" />
       <End Role="Bus" EntitySet="Bus" />
     </AssociationSet>
-    <AssociationSet Name="FK_Bus_Driver" Association="Self.FK_Bus_Driver">
-      <End Role="Driver" EntitySet="Driver" />
-      <End Role="Bus" EntitySet="Bus" />
-    </AssociationSet>
     <AssociationSet Name="FK_Bus_TypeBus" Association="Self.FK_Bus_TypeBus">
       <End Role="TypeBus" EntitySet="TypeBus" />
       <End Role="Bus" EntitySet="Bus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Driver_Bus" Association="Self.FK_Driver_Bus">
+      <End Role="Bus" EntitySet="Bus" />
+      <End Role="Driver" EntitySet="Driver" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
