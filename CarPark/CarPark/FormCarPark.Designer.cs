@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,8 @@
             this.idTypeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idConditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.водителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.типыАвтобусовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +52,8 @@
             this.автобусыВРемонтеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списанныеАвтобусыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -73,32 +73,13 @@
             this.idConditionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.busBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 81);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(962, 554);
+            this.dataGridView1.Size = new System.Drawing.Size(964, 554);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(962, 50);
-            this.panel1.TabIndex = 1;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem,
-            this.информацияПоЗапросуToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(962, 32);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -176,6 +157,25 @@
             // 
             this.busBindingSource.DataSource = typeof(CarPark.Bus);
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(964, 50);
+            this.panel1.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справочникиToolStripMenuItem,
+            this.информацияПоЗапросуToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(964, 32);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // справочникиToolStripMenuItem
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -204,6 +204,7 @@
             this.типыАвтобусовToolStripMenuItem.Name = "типыАвтобусовToolStripMenuItem";
             this.типыАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(227, 30);
             this.типыАвтобусовToolStripMenuItem.Text = "Типы автобусов";
+            this.типыАвтобусовToolStripMenuItem.Click += new System.EventHandler(this.типыАвтобусовToolStripMenuItem_Click);
             // 
             // состояниеАвтобусовToolStripMenuItem
             // 
@@ -262,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 634);
+            this.ClientSize = new System.Drawing.Size(964, 635);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -271,11 +272,11 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCarPark";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Учет наличия ранспортных средств (автобусы) в автопарке";
+            this.Text = "Учет наличия транспортных средств (автобусы) в автопарке";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

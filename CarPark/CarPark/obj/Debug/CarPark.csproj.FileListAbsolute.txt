@@ -15,3 +15,6 @@ D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.csproj.CopyComplete
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.exe
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.pdb
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormCarPark.resources
+D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormConditions.resources
+D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormDrivers.resources
+D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormTypesOfBuses.resources

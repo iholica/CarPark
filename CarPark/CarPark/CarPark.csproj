@@ -157,6 +157,8 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Bus.datasource" />
+    <None Include="Properties\DataSources\Driver.datasource" />
+    <None Include="Properties\DataSources\TypeBus.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -19,5 +19,11 @@ namespace CarPark
             FormDrivers form = new FormDrivers();
             form.Show();
         }
+        //типы автобусов
+        private void типыАвтобусовToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            FormTypesOfBuses form = new FormTypesOfBuses();
+            form.Show();
+        }
     }
 }
