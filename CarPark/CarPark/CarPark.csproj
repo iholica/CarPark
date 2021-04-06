@@ -79,14 +79,20 @@
     <Compile Include="Condition.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormConditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConditions.Designer.cs">
+      <DependentUpon>FormConditions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Driver.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Drivers.cs">
+    <Compile Include="FormDrivers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Drivers.Designer.cs">
-      <DependentUpon>Drivers.cs</DependentUpon>
+    <Compile Include="FormDrivers.Designer.cs">
+      <DependentUpon>FormDrivers.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCarPark.cs">
       <SubType>Form</SubType>
@@ -114,8 +120,23 @@
     <Compile Include="TypeBus.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormTypesOfBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTypesOfBuses.Designer.cs">
+      <DependentUpon>FormTypesOfBuses.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormCarPark.resx">
       <DependentUpon>FormCarPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConditions.resx">
+      <DependentUpon>FormConditions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDrivers.resx">
+      <DependentUpon>FormDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTypesOfBuses.resx">
+      <DependentUpon>FormTypesOfBuses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

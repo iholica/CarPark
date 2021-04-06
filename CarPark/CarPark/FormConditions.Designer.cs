@@ -1,6 +1,6 @@
 ﻿namespace CarPark
 {
-    partial class Conditions
+    partial class FormConditions
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormConditions
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Conditions";
+            this.ClientSize = new System.Drawing.Size(348, 197);
+            this.Name = "FormConditions";
+            this.Text = "Состояние автобусов";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

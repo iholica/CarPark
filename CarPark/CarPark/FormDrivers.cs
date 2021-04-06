@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CarPark
 {
-    public partial class TypesOfBuses : Form
+    public partial class FormDrivers : Form
     {
-        public TypesOfBuses()
+        public FormDrivers()
         {
             InitializeComponent();
         }
