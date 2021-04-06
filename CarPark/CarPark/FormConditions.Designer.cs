@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.conditionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conditionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,10 +58,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(348, 197);
             this.dataGridView1.TabIndex = 0;
             // 
-            // conditionBindingSource
-            // 
-            this.conditionBindingSource.DataSource = typeof(CarPark.Condition);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -85,6 +81,10 @@
             this.busDataGridViewTextBoxColumn.ReadOnly = true;
             this.busDataGridViewTextBoxColumn.Visible = false;
             // 
+            // conditionBindingSource
+            // 
+            this.conditionBindingSource.DataSource = typeof(CarPark.Condition);
+            // 
             // FormConditions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,6 +92,7 @@
             this.ClientSize = new System.Drawing.Size(348, 197);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormConditions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Состояние автобусов";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conditionBindingSource)).EndInit();

@@ -113,6 +113,26 @@ namespace CarPark.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_drawing_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pencil-drawing-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-plus-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_sync_settings_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-sync-settings-24", resourceCulture);
@@ -126,6 +146,26 @@ namespace CarPark.Properties {
         internal static System.Drawing.Bitmap icons8_three_way_direction_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-three-way-direction-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_waste {
+            get {
+                object obj = ResourceManager.GetObject("icons8-waste", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_waste_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-waste-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -100,6 +100,12 @@
     <Compile Include="FormCarPark.Designer.cs">
       <DependentUpon>FormCarPark.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditTypeOfBuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditTypeOfBuses.Designer.cs">
+      <DependentUpon>FormEditTypeOfBuses.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDrivers.resx">
       <DependentUpon>FormDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditTypeOfBuses.resx">
+      <DependentUpon>FormEditTypeOfBuses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTypesOfBuses.resx">
       <DependentUpon>FormTypesOfBuses.cs</DependentUpon>
@@ -191,6 +200,10 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
       <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-waste-24.png" />
+    <None Include="Resources\icons8-waste.gif" />
+    <None Include="Resources\icons8-pencil-drawing-24.png" />
+    <None Include="Resources\icons8-plus-24.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\files.png" />
     <None Include="Resources\icons8-sync-settings-24.png" />
