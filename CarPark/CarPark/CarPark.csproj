@@ -82,6 +82,12 @@
     <Compile Include="Driver.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Drivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers.Designer.cs">
+      <DependentUpon>Drivers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCarPark.cs">
       <SubType>Form</SubType>
     </Compile>
