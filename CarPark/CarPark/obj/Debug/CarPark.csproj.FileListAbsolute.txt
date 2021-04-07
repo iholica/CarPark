@@ -20,3 +20,4 @@ D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormDrivers.resources
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormTypesOfBuses.resources
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormEditTypeOfBuses.resources
 D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormEditCondition.resources
+D:\bsuir\CarPark\CarPark\CarPark\obj\Debug\CarPark.FormEditBus.resources

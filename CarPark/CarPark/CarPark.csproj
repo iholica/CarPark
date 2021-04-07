@@ -100,6 +100,12 @@
     <Compile Include="FormCarPark.Designer.cs">
       <DependentUpon>FormCarPark.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditBus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditBus.Designer.cs">
+      <DependentUpon>FormEditBus.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditCondition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDrivers.resx">
       <DependentUpon>FormDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditBus.resx">
+      <DependentUpon>FormEditBus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditCondition.resx">
       <DependentUpon>FormEditCondition.cs</DependentUpon>

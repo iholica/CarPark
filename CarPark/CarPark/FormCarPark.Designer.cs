@@ -41,18 +41,23 @@
             this.автобусыВРейсеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.автобусыВРемонтеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списанныеАвтобусыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberOfSeatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.governmentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTypeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idConditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.numberOfSeatsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.governmentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,13 +69,14 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.brandDataGridViewTextBoxColumn,
-            this.typeBusDataGridViewTextBoxColumn,
-            this.conditionDataGridViewTextBoxColumn,
+            this.idTypeBusDataGridViewTextBoxColumn,
+            this.idConditionDataGridViewTextBoxColumn,
             this.numberOfSeatsDataGridViewTextBoxColumn,
             this.governmentNumberDataGridViewTextBoxColumn,
-            this.driverDataGridViewTextBoxColumn,
-            this.idTypeBusDataGridViewTextBoxColumn,
-            this.idConditionDataGridViewTextBoxColumn});
+            this.conditionDataGridViewTextBoxColumn,
+            this.typeBusDataGridViewTextBoxColumn,
+            this.driverDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.busBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 81);
@@ -184,6 +190,44 @@
             this.списанныеАвтобусыToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.списанныеАвтобусыToolStripMenuItem.Text = "Списанные автобусы";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьАвтобусToolStripMenuItem,
+            this.изменитьАвтобусToolStripMenuItem,
+            this.удалитьАвтобусToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 116);
+            // 
+            // добавитьАвтобусToolStripMenuItem
+            // 
+            this.добавитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.добавитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.добавитьАвтобусToolStripMenuItem.Name = "добавитьАвтобусToolStripMenuItem";
+            this.добавитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.добавитьАвтобусToolStripMenuItem.Text = "Добавить автобус";
+            this.добавитьАвтобусToolStripMenuItem.Click += new System.EventHandler(this.добавитьАвтобусToolStripMenuItem_Click);
+            // 
+            // изменитьАвтобусToolStripMenuItem
+            // 
+            this.изменитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
+            this.изменитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.изменитьАвтобусToolStripMenuItem.Name = "изменитьАвтобусToolStripMenuItem";
+            this.изменитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.изменитьАвтобусToolStripMenuItem.Text = "Изменить автобус";
+            // 
+            // удалитьАвтобусToolStripMenuItem
+            // 
+            this.удалитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
+            this.удалитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьАвтобусToolStripMenuItem.Name = "удалитьАвтобусToolStripMenuItem";
+            this.удалитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
+            this.удалитьАвтобусToolStripMenuItem.Text = "Удалить автобус";
+            // 
+            // busBindingSource
+            // 
+            this.busBindingSource.DataSource = typeof(CarPark.Bus);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -195,50 +239,9 @@
             // brandDataGridViewTextBoxColumn
             // 
             this.brandDataGridViewTextBoxColumn.DataPropertyName = "Brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Марка автобуса";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Brand";
             this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
             this.brandDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brandDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // typeBusDataGridViewTextBoxColumn
-            // 
-            this.typeBusDataGridViewTextBoxColumn.DataPropertyName = "TypeBus";
-            this.typeBusDataGridViewTextBoxColumn.HeaderText = "Тип автобуса";
-            this.typeBusDataGridViewTextBoxColumn.Name = "typeBusDataGridViewTextBoxColumn";
-            this.typeBusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeBusDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // conditionDataGridViewTextBoxColumn
-            // 
-            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
-            this.conditionDataGridViewTextBoxColumn.HeaderText = "Состояние";
-            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
-            this.conditionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.conditionDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // numberOfSeatsDataGridViewTextBoxColumn
-            // 
-            this.numberOfSeatsDataGridViewTextBoxColumn.DataPropertyName = "NumberOfSeats";
-            this.numberOfSeatsDataGridViewTextBoxColumn.HeaderText = "Количество мест";
-            this.numberOfSeatsDataGridViewTextBoxColumn.Name = "numberOfSeatsDataGridViewTextBoxColumn";
-            this.numberOfSeatsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberOfSeatsDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // governmentNumberDataGridViewTextBoxColumn
-            // 
-            this.governmentNumberDataGridViewTextBoxColumn.DataPropertyName = "GovernmentNumber";
-            this.governmentNumberDataGridViewTextBoxColumn.HeaderText = "Государственный номер";
-            this.governmentNumberDataGridViewTextBoxColumn.Name = "governmentNumberDataGridViewTextBoxColumn";
-            this.governmentNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.governmentNumberDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // driverDataGridViewTextBoxColumn
-            // 
-            this.driverDataGridViewTextBoxColumn.DataPropertyName = "Driver";
-            this.driverDataGridViewTextBoxColumn.HeaderText = "Водители";
-            this.driverDataGridViewTextBoxColumn.Name = "driverDataGridViewTextBoxColumn";
-            this.driverDataGridViewTextBoxColumn.ReadOnly = true;
-            this.driverDataGridViewTextBoxColumn.Width = 200;
             // 
             // idTypeBusDataGridViewTextBoxColumn
             // 
@@ -256,9 +259,40 @@
             this.idConditionDataGridViewTextBoxColumn.ReadOnly = true;
             this.idConditionDataGridViewTextBoxColumn.Visible = false;
             // 
-            // busBindingSource
+            // numberOfSeatsDataGridViewTextBoxColumn
             // 
-            this.busBindingSource.DataSource = typeof(CarPark.Bus);
+            this.numberOfSeatsDataGridViewTextBoxColumn.DataPropertyName = "NumberOfSeats";
+            this.numberOfSeatsDataGridViewTextBoxColumn.HeaderText = "NumberOfSeats";
+            this.numberOfSeatsDataGridViewTextBoxColumn.Name = "numberOfSeatsDataGridViewTextBoxColumn";
+            this.numberOfSeatsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // governmentNumberDataGridViewTextBoxColumn
+            // 
+            this.governmentNumberDataGridViewTextBoxColumn.DataPropertyName = "GovernmentNumber";
+            this.governmentNumberDataGridViewTextBoxColumn.HeaderText = "GovernmentNumber";
+            this.governmentNumberDataGridViewTextBoxColumn.Name = "governmentNumberDataGridViewTextBoxColumn";
+            this.governmentNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // conditionDataGridViewTextBoxColumn
+            // 
+            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
+            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
+            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
+            this.conditionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeBusDataGridViewTextBoxColumn
+            // 
+            this.typeBusDataGridViewTextBoxColumn.DataPropertyName = "TypeBus";
+            this.typeBusDataGridViewTextBoxColumn.HeaderText = "TypeBus";
+            this.typeBusDataGridViewTextBoxColumn.Name = "typeBusDataGridViewTextBoxColumn";
+            this.typeBusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // driverDataGridViewTextBoxColumn
+            // 
+            this.driverDataGridViewTextBoxColumn.DataPropertyName = "Driver";
+            this.driverDataGridViewTextBoxColumn.HeaderText = "Driver";
+            this.driverDataGridViewTextBoxColumn.Name = "driverDataGridViewTextBoxColumn";
+            this.driverDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormCarPark
             // 
@@ -277,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -286,16 +321,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource busBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeBusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberOfSeatsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn governmentNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn driverDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTypeBusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idConditionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
@@ -307,6 +332,20 @@
         private System.Windows.Forms.ToolStripMenuItem автобусыВРейсеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem автобусыВРемонтеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списанныеАвтобусыToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьАвтобусToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изменитьАвтобусToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьАвтобусToolStripMenuItem;
+        private System.Windows.Forms.BindingSource busBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTypeBusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idConditionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberOfSeatsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn governmentNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeBusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn driverDataGridViewTextBoxColumn;
     }
 }
 
