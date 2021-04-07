@@ -193,7 +193,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormEditBus";
-            this.Text = "Работа с данными: автобусы";
+            this.Text = "Работа с данными: автобуса";
             this.Load += new System.EventHandler(this.FormEditBus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

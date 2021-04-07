@@ -112,6 +112,12 @@
     <Compile Include="FormEditCondition.Designer.cs">
       <DependentUpon>FormEditCondition.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditDriver.Designer.cs">
+      <DependentUpon>FormEditDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditTypeOfBuses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditCondition.resx">
       <DependentUpon>FormEditCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditDriver.resx">
+      <DependentUpon>FormEditDriver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditTypeOfBuses.resx">
       <DependentUpon>FormEditTypeOfBuses.cs</DependentUpon>
