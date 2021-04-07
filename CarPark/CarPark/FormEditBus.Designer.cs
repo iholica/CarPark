@@ -40,6 +40,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +93,7 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(73, 181);
+            this.button1.Location = new System.Drawing.Point(73, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 5;
@@ -102,7 +104,7 @@
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(193, 181);
+            this.button2.Location = new System.Drawing.Point(193, 204);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 6;
@@ -151,11 +153,30 @@
             this.textBox3.Size = new System.Drawing.Size(184, 21);
             this.textBox3.TabIndex = 11;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Водитель автобуса:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(195, 167);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(184, 24);
+            this.comboBox3.TabIndex = 13;
+            // 
             // FormEditBus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 223);
+            this.ClientSize = new System.Drawing.Size(414, 259);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -173,6 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormEditBus";
             this.Text = "Работа с данными: автобусы";
+            this.Load += new System.EventHandler(this.FormEditBus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +214,7 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox comboBox3;
     }
 }

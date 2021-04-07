@@ -10,6 +10,7 @@
           <ScalarProperty Name="IdCondition" ColumnName="IdCondition" />
           <ScalarProperty Name="NumberOfSeats" ColumnName="NumberOfSeats" />
           <ScalarProperty Name="GovernmentNumber" ColumnName="GovernmentNumber" />
+          <ScalarProperty Name="IdDriver" ColumnName="IdDriver" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -31,7 +32,6 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Experience" ColumnName="Experience" />
-          <ScalarProperty Name="IdBus" ColumnName="IdBus" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -16,5 +16,10 @@ namespace CarPark
         {
             InitializeComponent();
         }
+
+        private void FormEditBus_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

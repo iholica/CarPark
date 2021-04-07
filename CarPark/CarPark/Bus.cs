@@ -14,22 +14,16 @@ namespace CarPark
     
     public partial class Bus
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bus()
-        {
-            this.Driver = new HashSet<Driver>();
-        }
-    
         public int Id { get; set; }
         public string Brand { get; set; }
         public int IdTypeBus { get; set; }
         public int IdCondition { get; set; }
         public int NumberOfSeats { get; set; }
         public string GovernmentNumber { get; set; }
+        public Nullable<int> IdDriver { get; set; }
     
         public virtual Condition Condition { get; set; }
+        public virtual Driver Driver { get; set; }
         public virtual TypeBus TypeBus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Driver> Driver { get; set; }
     }
 }
