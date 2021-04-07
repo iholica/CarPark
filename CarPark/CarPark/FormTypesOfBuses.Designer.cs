@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.добавитьТипАвтобусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьТипАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьТипАвтобусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.typeBusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.typeBusBindingSource)).BeginInit();
@@ -62,7 +62,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(451, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 270);
             this.dataGridView1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -73,29 +73,6 @@
             this.удалитьТипАвтобусаToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(240, 94);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // busDataGridViewTextBoxColumn
-            // 
-            this.busDataGridViewTextBoxColumn.DataPropertyName = "Bus";
-            this.busDataGridViewTextBoxColumn.HeaderText = "Bus";
-            this.busDataGridViewTextBoxColumn.Name = "busDataGridViewTextBoxColumn";
-            this.busDataGridViewTextBoxColumn.ReadOnly = true;
-            this.busDataGridViewTextBoxColumn.Visible = false;
             // 
             // добавитьТипАвтобусаToolStripMenuItem
             // 
@@ -122,16 +99,41 @@
             this.удалитьТипАвтобусаToolStripMenuItem.Name = "удалитьТипАвтобусаToolStripMenuItem";
             this.удалитьТипАвтобусаToolStripMenuItem.Size = new System.Drawing.Size(239, 30);
             this.удалитьТипАвтобусаToolStripMenuItem.Text = "Удалить тип автобуса";
+            this.удалитьТипАвтобусаToolStripMenuItem.Click += new System.EventHandler(this.удалитьТипАвтобусаToolStripMenuItem_Click);
             // 
             // typeBusBindingSource
             // 
             this.typeBusBindingSource.DataSource = typeof(CarPark.TypeBus);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название типа автобусов";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // busDataGridViewTextBoxColumn
+            // 
+            this.busDataGridViewTextBoxColumn.DataPropertyName = "Bus";
+            this.busDataGridViewTextBoxColumn.HeaderText = "Bus";
+            this.busDataGridViewTextBoxColumn.Name = "busDataGridViewTextBoxColumn";
+            this.busDataGridViewTextBoxColumn.ReadOnly = true;
+            this.busDataGridViewTextBoxColumn.Visible = false;
+            // 
             // FormTypesOfBuses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 319);
+            this.ClientSize = new System.Drawing.Size(303, 270);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -149,12 +151,12 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource typeBusBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn busDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem добавитьТипАвтобусаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьТипАвтобусToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьТипАвтобусаToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn busDataGridViewTextBoxColumn;
     }
 }

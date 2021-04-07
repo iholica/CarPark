@@ -52,7 +52,7 @@ namespace CarPark
                 MessageBox.Show("Данные обновлены.", "Типы автобусов", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Выберите данные для редактирования!.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Выберите данные для редактирования!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         //добавление типа автобуса
         private void добавитьТипАвтобусаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +71,27 @@ namespace CarPark
             db.SaveChanges();
 
             MessageBox.Show("Новый тип автобуса добавлен.", "Типы автобусов", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        //удаление типа автобуса
+        private void удалитьТипАвтобусаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int index = dataGridView1.SelectedRows[0].Index;
+                int id = 0;
+                bool item = Int32.TryParse(dataGridView1[0, index].Value.ToString(), out id);
+                if (item == false)
+                    return;
+                if (MessageBox.Show("Вы действительно желаете удалить выбранный тип автобуса?", "Операция удаления типа автобуса", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    TypeBus type_bus = db.TypeBus.Find(id);
+                    db.TypeBus.Remove(type_bus);
+                    db.SaveChanges();
+                    MessageBox.Show("Данные удалены.", "Типы автобусов", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+                MessageBox.Show("Выберите данные для удаления!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
