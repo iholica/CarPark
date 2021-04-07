@@ -5,28 +5,28 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Brand" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IdTypeBus" Type="int" Nullable="false" />
     <Property Name="IdCondition" Type="int" Nullable="false" />
     <Property Name="NumberOfSeats" Type="int" Nullable="false" />
-    <Property Name="GovernmentNumber" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="GovernmentNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <EntityType Name="Condition">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Driver">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LastName" Type="nchar" MaxLength="30" Nullable="false" />
-    <Property Name="FirstName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DateOfBith" Type="datetime" Nullable="false" />
-    <Property Name="Address" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Experience" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="IdBus" Type="int" />
@@ -36,7 +36,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <Association Name="FK_Bus_Condition">
     <End Role="Condition" Type="Self.Condition" Multiplicity="1" />

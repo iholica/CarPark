@@ -5,11 +5,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Brand" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IdTypeBus" Type="Int32" Nullable="false" />
     <Property Name="IdCondition" Type="Int32" Nullable="false" />
     <Property Name="NumberOfSeats" Type="Int32" Nullable="false" />
-    <Property Name="GovernmentNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="GovernmentNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Condition" Relationship="Self.FK_Bus_Condition" FromRole="Bus" ToRole="Condition" />
     <NavigationProperty Name="TypeBus" Relationship="Self.FK_Bus_TypeBus" FromRole="Bus" ToRole="TypeBus" />
     <NavigationProperty Name="Driver" Relationship="Self.FK_Driver_Bus" FromRole="Bus" ToRole="Driver" />
@@ -19,7 +19,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Bus" Relationship="Self.FK_Bus_Condition" FromRole="Condition" ToRole="Bus" />
   </EntityType>
   <EntityType Name="Driver">
@@ -27,10 +27,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateOfBith" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Address" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="Experience" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="IdBus" Type="Int32" />
@@ -41,7 +41,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Bus" Relationship="Self.FK_Bus_TypeBus" FromRole="TypeBus" ToRole="Bus" />
   </EntityType>
   <Association Name="FK_Bus_Condition">
@@ -80,7 +80,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DBEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bus" EntityType="Self.Bus" />
     <EntitySet Name="Condition" EntityType="Self.Condition" />
     <EntitySet Name="Driver" EntityType="Self.Driver" />

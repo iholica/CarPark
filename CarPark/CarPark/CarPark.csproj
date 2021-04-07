@@ -79,14 +79,14 @@
     <Compile Include="Condition.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Driver.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormConditions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormConditions.Designer.cs">
       <DependentUpon>FormConditions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Driver.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="FormDrivers.cs">
       <SubType>Form</SubType>
@@ -129,14 +129,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeBus.cs">
-      <DependentUpon>ModelDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="FormTypesOfBuses.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTypesOfBuses.Designer.cs">
       <DependentUpon>FormTypesOfBuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeBus.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormCarPark.resx">
       <DependentUpon>FormCarPark.cs</DependentUpon>
