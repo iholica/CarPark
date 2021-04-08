@@ -75,12 +75,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(162)))), ((int)(((byte)(183)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -100,12 +101,13 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(161)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(37)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dataGridView1.Location = new System.Drawing.Point(0, 76);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -126,6 +128,7 @@
             // 
             // добавитьАвтобусToolStripMenuItem
             // 
+            this.добавитьАвтобусToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.добавитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
             this.добавитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.добавитьАвтобусToolStripMenuItem.Name = "добавитьАвтобусToolStripMenuItem";
@@ -135,6 +138,7 @@
             // 
             // изменитьАвтобусToolStripMenuItem
             // 
+            this.изменитьАвтобусToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.изменитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
             this.изменитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.изменитьАвтобусToolStripMenuItem.Name = "изменитьАвтобусToolStripMenuItem";
@@ -144,6 +148,7 @@
             // 
             // удалитьАвтобусToolStripMenuItem
             // 
+            this.удалитьАвтобусToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.удалитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
             this.удалитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.удалитьАвтобусToolStripMenuItem.Name = "удалитьАвтобусToolStripMenuItem";
@@ -153,7 +158,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -166,7 +171,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(51, 11);
             this.textBox1.Name = "textBox1";
@@ -185,7 +190,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
@@ -196,6 +201,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(963, 32);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseLeave += new System.EventHandler(this.menuStrip1_MouseLeave);
             // 
             // справочникиToolStripMenuItem
             // 
@@ -203,12 +209,14 @@
             this.водителиToolStripMenuItem,
             this.типыАвтобусовToolStripMenuItem,
             this.состояниеАвтобусовToolStripMenuItem});
-            this.справочникиToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.справочникиToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.справочникиToolStripMenuItem.Image = global::CarPark.Properties.Resources.files;
             this.справочникиToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.справочникиToolStripMenuItem.Text = "Справочники";
+            this.справочникиToolStripMenuItem.DropDownClosed += new System.EventHandler(this.справочникиToolStripMenuItem_DropDownClosed);
+            this.справочникиToolStripMenuItem.DropDownOpened += new System.EventHandler(this.справочникиToolStripMenuItem_DropDownOpened);
             // 
             // водителиToolStripMenuItem
             // 
@@ -248,12 +256,15 @@
             this.автобусыВРемонтеToolStripMenuItem,
             this.списанныеАвтобусыToolStripMenuItem,
             this.всеАвтобусыАвтопаркаToolStripMenuItem});
-            this.информацияПоЗапросуToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.информацияПоЗапросуToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.информацияПоЗапросуToolStripMenuItem.Image = global::CarPark.Properties.Resources.search;
             this.информацияПоЗапросуToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.информацияПоЗапросуToolStripMenuItem.Name = "информацияПоЗапросуToolStripMenuItem";
             this.информацияПоЗапросуToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
             this.информацияПоЗапросуToolStripMenuItem.Text = "Информация по запросу";
+            this.информацияПоЗапросуToolStripMenuItem.DropDownClosed += new System.EventHandler(this.информацияПоЗапросуToolStripMenuItem_DropDownClosed);
+            this.информацияПоЗапросуToolStripMenuItem.DropDownOpened += new System.EventHandler(this.информацияПоЗапросуToolStripMenuItem_DropDownOpened);
+            this.информацияПоЗапросуToolStripMenuItem.Click += new System.EventHandler(this.информацияПоЗапросуToolStripMenuItem_Click);
             // 
             // свободныеАвтобусыToolStripMenuItem
             // 

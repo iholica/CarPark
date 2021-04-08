@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -100,7 +101,7 @@ namespace CarPark
                 form_edit.comboBox1.DataSource = types;
                 form_edit.comboBox1.ValueMember = "Id";
                 form_edit.comboBox1.DisplayMember = "Name";
-                if (bus.TypeBus!= null)
+                if (bus.TypeBus != null)
                     form_edit.comboBox1.SelectedValue = bus.TypeBus.Id;
 
                 List<Condition> conditions = db.Condition.ToList();
@@ -161,7 +162,7 @@ namespace CarPark
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string item = textBox1.Text;
-            var search = db.Bus.Where(bus => bus.Brand.StartsWith(item)| bus.Driver.LastName.StartsWith(item)|bus.GovernmentNumber.StartsWith(item)|bus.TypeBus.Name.StartsWith(item));
+            var search = db.Bus.Where(bus => bus.Brand.StartsWith(item) | bus.Driver.LastName.StartsWith(item) | bus.GovernmentNumber.StartsWith(item) | bus.TypeBus.Name.StartsWith(item));
 
             dataGridView1.DataSource = search.ToList();
         }
@@ -195,6 +196,36 @@ namespace CarPark
             var queryAllBuses = from bus in db.Bus
                                 select bus;
             dataGridView1.DataSource = queryAllBuses.ToList();
+        }
+
+        private void информацияПоЗапросуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void информацияПоЗапросуToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            menuStrip1.Items[1].ForeColor = Color.White;
+        }
+
+        private void информацияПоЗапросуToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            menuStrip1.Items[1].ForeColor = Color.FromArgb(100, 160, 194);
+        }
+
+        private void справочникиToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
+        {
+            menuStrip1.Items[0].ForeColor = Color.White;
+        }
+
+        private void справочникиToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            menuStrip1.Items[0].ForeColor = Color.FromArgb(100, 160, 194);
         }
     }
 }

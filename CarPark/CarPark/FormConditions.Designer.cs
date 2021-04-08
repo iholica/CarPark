@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConditions));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьСостояниеАвтобусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьСостояниеАвтобусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьСостояниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conditionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -49,6 +52,16 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -56,15 +69,72 @@
             this.busDataGridViewTextBoxColumn});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.conditionBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(303, 258);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьСостояниеАвтобусаToolStripMenuItem,
+            this.изменитьСостояниеАвтобусаToolStripMenuItem,
+            this.удалитьСостояниеToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 94);
+            // 
+            // добавитьСостояниеАвтобусаToolStripMenuItem
+            // 
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.Name = "добавитьСостояниеАвтобусаToolStripMenuItem";
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.Text = "Добавить состояние ";
+            this.добавитьСостояниеАвтобусаToolStripMenuItem.Click += new System.EventHandler(this.добавитьСостояниеАвтобусаToolStripMenuItem_Click);
+            // 
+            // изменитьСостояниеАвтобусаToolStripMenuItem
+            // 
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.Name = "изменитьСостояниеАвтобусаToolStripMenuItem";
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.Text = "Изменить состояние ";
+            this.изменитьСостояниеАвтобусаToolStripMenuItem.Click += new System.EventHandler(this.изменитьСостояниеАвтобусаToolStripMenuItem_Click);
+            // 
+            // удалитьСостояниеToolStripMenuItem
+            // 
+            this.удалитьСостояниеToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.удалитьСостояниеToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
+            this.удалитьСостояниеToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьСостояниеToolStripMenuItem.Name = "удалитьСостояниеToolStripMenuItem";
+            this.удалитьСостояниеToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
+            this.удалитьСостояниеToolStripMenuItem.Text = "Удалить состояние";
+            this.удалитьСостояниеToolStripMenuItem.Click += new System.EventHandler(this.удалитьСостояниеToolStripMenuItem_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -89,42 +159,6 @@
             this.busDataGridViewTextBoxColumn.Name = "busDataGridViewTextBoxColumn";
             this.busDataGridViewTextBoxColumn.ReadOnly = true;
             this.busDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьСостояниеАвтобусаToolStripMenuItem,
-            this.изменитьСостояниеАвтобусаToolStripMenuItem,
-            this.удалитьСостояниеToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 94);
-            // 
-            // добавитьСостояниеАвтобусаToolStripMenuItem
-            // 
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.Name = "добавитьСостояниеАвтобусаToolStripMenuItem";
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.Text = "Добавить состояние ";
-            this.добавитьСостояниеАвтобусаToolStripMenuItem.Click += new System.EventHandler(this.добавитьСостояниеАвтобусаToolStripMenuItem_Click);
-            // 
-            // изменитьСостояниеАвтобусаToolStripMenuItem
-            // 
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.Name = "изменитьСостояниеАвтобусаToolStripMenuItem";
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.Text = "Изменить состояние ";
-            this.изменитьСостояниеАвтобусаToolStripMenuItem.Click += new System.EventHandler(this.изменитьСостояниеАвтобусаToolStripMenuItem_Click);
-            // 
-            // удалитьСостояниеToolStripMenuItem
-            // 
-            this.удалитьСостояниеToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
-            this.удалитьСостояниеToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.удалитьСостояниеToolStripMenuItem.Name = "удалитьСостояниеToolStripMenuItem";
-            this.удалитьСостояниеToolStripMenuItem.Size = new System.Drawing.Size(225, 30);
-            this.удалитьСостояниеToolStripMenuItem.Text = "Удалить состояние";
-            this.удалитьСостояниеToolStripMenuItem.Click += new System.EventHandler(this.удалитьСостояниеToolStripMenuItem_Click);
             // 
             // conditionBindingSource
             // 

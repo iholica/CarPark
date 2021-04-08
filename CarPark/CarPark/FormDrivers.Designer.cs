@@ -29,8 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrivers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,10 +46,6 @@
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.добавитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -54,6 +57,16 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -66,15 +79,72 @@
             this.busDataGridViewTextBoxColumn});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.driverBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkSlateGray;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(953, 493);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьВодителяToolStripMenuItem,
+            this.изменитьВодителяToolStripMenuItem,
+            this.удалитьВодителяToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
+            // 
+            // добавитьВодителяToolStripMenuItem
+            // 
+            this.добавитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
+            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
+            this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
+            // 
+            // изменитьВодителяToolStripMenuItem
+            // 
+            this.изменитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
+            this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
+            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
+            this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
+            // 
+            // удалитьВодителяToolStripMenuItem
+            // 
+            this.удалитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
+            this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
+            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
+            this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -140,42 +210,6 @@
             this.busDataGridViewTextBoxColumn.ReadOnly = true;
             this.busDataGridViewTextBoxColumn.Visible = false;
             this.busDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьВодителяToolStripMenuItem,
-            this.изменитьВодителяToolStripMenuItem,
-            this.удалитьВодителяToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
-            // 
-            // добавитьВодителяToolStripMenuItem
-            // 
-            this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
-            this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
-            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
-            this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
-            // 
-            // изменитьВодителяToolStripMenuItem
-            // 
-            this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
-            this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
-            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
-            this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
-            // 
-            // удалитьВодителяToolStripMenuItem
-            // 
-            this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
-            this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
-            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
-            this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
             // 
             // driverBindingSource
             // 
