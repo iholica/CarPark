@@ -157,13 +157,44 @@ namespace CarPark
             else
                 MessageBox.Show("Выберите данные для удаления!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
+        //поиск по таблице
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string item = textBox1.Text;
             var search = db.Bus.Where(bus => bus.Brand.StartsWith(item)| bus.Driver.LastName.StartsWith(item)|bus.GovernmentNumber.StartsWith(item)|bus.TypeBus.Name.StartsWith(item));
 
             dataGridView1.DataSource = search.ToList();
+        }
+
+        private void свободныеАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryEmptyBus = db.Bus.Where(bus => bus.Condition.Name == "На базе");
+            dataGridView1.DataSource = queryEmptyBus.ToList();
+        }
+
+        private void автобусыВРейсеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryInFlightBus = db.Bus.Where(bus => bus.Condition.Name == "В рейсе");
+            dataGridView1.DataSource = queryInFlightBus.ToList();
+        }
+
+        private void автобусыВРемонтеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryUnderRepair = db.Bus.Where(bus => bus.Condition.Name == "В ремонте");
+            dataGridView1.DataSource = queryUnderRepair.ToList();
+        }
+
+        private void списанныеАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryDecommissioned = db.Bus.Where(bus => bus.Condition.Name == "Списан");
+            dataGridView1.DataSource = queryDecommissioned.ToList();
+        }
+
+        private void всеАвтобусыАвтопаркаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var queryAllBuses = from bus in db.Bus
+                                select bus;
+            dataGridView1.DataSource = queryAllBuses.ToList();
         }
     }
 }
