@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrivers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,9 +38,14 @@
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,22 +63,18 @@
             this.addressDataGridViewTextBoxColumn,
             this.phoneDataGridViewTextBoxColumn,
             this.experienceDataGridViewTextBoxColumn,
-            this.idBusDataGridViewTextBoxColumn,
             this.busDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.driverBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(944, 532);
+            this.dataGridView1.Size = new System.Drawing.Size(953, 493);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // driverBindingSource
-            // 
-            this.driverBindingSource.DataSource = typeof(CarPark.Driver);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -89,7 +90,7 @@
             this.lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 150;
+            this.lastNameDataGridViewTextBoxColumn.Width = 170;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -97,7 +98,7 @@
             this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 120;
+            this.firstNameDataGridViewTextBoxColumn.Width = 130;
             // 
             // dateOfBithDataGridViewTextBoxColumn
             // 
@@ -105,6 +106,7 @@
             this.dateOfBithDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
             this.dateOfBithDataGridViewTextBoxColumn.Name = "dateOfBithDataGridViewTextBoxColumn";
             this.dateOfBithDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateOfBithDataGridViewTextBoxColumn.Width = 160;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -112,7 +114,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Адрес проживания";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 200;
+            this.addressDataGridViewTextBoxColumn.Width = 220;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
@@ -128,14 +130,7 @@
             this.experienceDataGridViewTextBoxColumn.HeaderText = "Стаж работы";
             this.experienceDataGridViewTextBoxColumn.Name = "experienceDataGridViewTextBoxColumn";
             this.experienceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idBusDataGridViewTextBoxColumn
-            // 
-            this.idBusDataGridViewTextBoxColumn.DataPropertyName = "IdBus";
-            this.idBusDataGridViewTextBoxColumn.HeaderText = "IdBus";
-            this.idBusDataGridViewTextBoxColumn.Name = "idBusDataGridViewTextBoxColumn";
-            this.idBusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idBusDataGridViewTextBoxColumn.Visible = false;
+            this.experienceDataGridViewTextBoxColumn.Width = 150;
             // 
             // busDataGridViewTextBoxColumn
             // 
@@ -143,19 +138,63 @@
             this.busDataGridViewTextBoxColumn.HeaderText = "Закрепленный автобус";
             this.busDataGridViewTextBoxColumn.Name = "busDataGridViewTextBoxColumn";
             this.busDataGridViewTextBoxColumn.ReadOnly = true;
+            this.busDataGridViewTextBoxColumn.Visible = false;
             this.busDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьВодителяToolStripMenuItem,
+            this.изменитьВодителяToolStripMenuItem,
+            this.удалитьВодителяToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
+            // 
+            // добавитьВодителяToolStripMenuItem
+            // 
+            this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
+            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
+            this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
+            // 
+            // изменитьВодителяToolStripMenuItem
+            // 
+            this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
+            this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
+            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
+            this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
+            // 
+            // удалитьВодителяToolStripMenuItem
+            // 
+            this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
+            this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
+            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
+            this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
+            // 
+            // driverBindingSource
+            // 
+            this.driverBindingSource.DataSource = typeof(CarPark.Driver);
             // 
             // FormDrivers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 532);
+            this.ClientSize = new System.Drawing.Size(953, 493);
             this.Controls.Add(this.dataGridView1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormDrivers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Водители автопарка";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -165,6 +204,11 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource driverBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idBusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem добавитьВодителяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изменитьВодителяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьВодителяToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -172,7 +216,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn experienceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idBusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn busDataGridViewTextBoxColumn;
     }
 }

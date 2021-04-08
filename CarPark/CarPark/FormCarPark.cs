@@ -56,7 +56,7 @@ namespace CarPark
             form_edit.comboBox2.DisplayMember = "Name";
 
             List<Driver> drivers = db.Driver.ToList();
-            form_edit.comboBox3.DataSource = conditions;
+            form_edit.comboBox3.DataSource = drivers;
             form_edit.comboBox3.ValueMember = "Id";
             form_edit.comboBox3.DisplayMember = "LastName";
 
@@ -108,7 +108,7 @@ namespace CarPark
                 form_edit.comboBox2.ValueMember = "Id";
                 form_edit.comboBox2.DisplayMember = "Name";
                 if (bus.Condition != null)
-                    form_edit.comboBox1.SelectedValue = bus.Condition.Id;
+                    form_edit.comboBox2.SelectedValue = bus.Condition.Id;
 
                 List<Driver> drivers = db.Driver.ToList();
                 form_edit.comboBox3.DataSource = drivers;
@@ -156,6 +156,14 @@ namespace CarPark
             }
             else
                 MessageBox.Show("Выберите данные для удаления!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string item = textBox1.Text;
+            var search = db.Bus.Where(bus => bus.Brand.StartsWith(item)| bus.Driver.LastName.StartsWith(item)|bus.GovernmentNumber.StartsWith(item)|bus.TypeBus.Name.StartsWith(item));
+
+            dataGridView1.DataSource = search.ToList();
         }
     }
 }
