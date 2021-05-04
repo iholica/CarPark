@@ -251,6 +251,7 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
       <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\free-icon-back-arrow-1174481.png" />
     <None Include="Resources\magnifying-glass.png" />
     <None Include="Resources\icons8-waste-24.png" />
     <None Include="Resources\icons8-waste.gif" />

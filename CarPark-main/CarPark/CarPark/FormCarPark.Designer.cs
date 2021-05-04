@@ -33,6 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCarPark));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.CountLable = new System.Windows.Forms.Label();
+            this.TotalCount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTypeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,15 +50,10 @@
             this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeBusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьАвтобусToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.busBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.водителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.типыАвтобусовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,15 +64,12 @@
             this.автобусыВРемонтеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списанныеАвтобусыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеАвтобусыАвтопаркаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CountLable = new System.Windows.Forms.Label();
-            this.TotalCount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -120,6 +120,103 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(963, 708);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьАвтобусToolStripMenuItem,
+            this.изменитьАвтобусToolStripMenuItem,
+            this.удалитьАвтобусToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(206, 94);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.TotalCount);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.CountLable);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(106)))), ((int)(((byte)(102)))));
+            this.panel1.Location = new System.Drawing.Point(0, 32);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(963, 44);
+            this.panel1.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(51, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(390, 24);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справочникиToolStripMenuItem,
+            this.информацияПоЗапросуToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(963, 32);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.MouseLeave += new System.EventHandler(this.menuStrip1_MouseLeave);
+            // 
+            // CountLable
+            // 
+            this.CountLable.AutoSize = true;
+            this.CountLable.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CountLable.ForeColor = System.Drawing.SystemColors.Control;
+            this.CountLable.Location = new System.Drawing.Point(788, 13);
+            this.CountLable.Name = "CountLable";
+            this.CountLable.Size = new System.Drawing.Size(142, 18);
+            this.CountLable.TabIndex = 3;
+            this.CountLable.Text = "Общее количество";
+            // 
+            // TotalCount
+            // 
+            this.TotalCount.AutoSize = true;
+            this.TotalCount.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.TotalCount.ForeColor = System.Drawing.SystemColors.Control;
+            this.TotalCount.Location = new System.Drawing.Point(936, 13);
+            this.TotalCount.Name = "TotalCount";
+            this.TotalCount.Size = new System.Drawing.Size(16, 18);
+            this.TotalCount.TabIndex = 4;
+            this.TotalCount.Text = "0";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CarPark.Properties.Resources.free_icon_back_arrow_1174481;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(447, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 28);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Отменить действие";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarPark.Properties.Resources.magnifying_glass;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 34);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -205,23 +302,13 @@
             this.driverDataGridViewTextBoxColumn.ReadOnly = true;
             this.driverDataGridViewTextBoxColumn.Width = 200;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьАвтобусToolStripMenuItem,
-            this.изменитьАвтобусToolStripMenuItem,
-            this.удалитьАвтобусToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 94);
-            // 
             // добавитьАвтобусToolStripMenuItem
             // 
             this.добавитьАвтобусToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.добавитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
             this.добавитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.добавитьАвтобусToolStripMenuItem.Name = "добавитьАвтобусToolStripMenuItem";
-            this.добавитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(213, 30);
+            this.добавитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
             this.добавитьАвтобусToolStripMenuItem.Text = "Добавить автобус";
             this.добавитьАвтобусToolStripMenuItem.Click += new System.EventHandler(this.добавитьАвтобусToolStripMenuItem_Click);
             // 
@@ -231,7 +318,7 @@
             this.изменитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
             this.изменитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.изменитьАвтобусToolStripMenuItem.Name = "изменитьАвтобусToolStripMenuItem";
-            this.изменитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(213, 30);
+            this.изменитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
             this.изменитьАвтобусToolStripMenuItem.Text = "Изменить автобус";
             this.изменитьАвтобусToolStripMenuItem.Click += new System.EventHandler(this.изменитьАвтобусToolStripMenuItem_Click);
             // 
@@ -241,61 +328,13 @@
             this.удалитьАвтобусToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
             this.удалитьАвтобусToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.удалитьАвтобусToolStripMenuItem.Name = "удалитьАвтобусToolStripMenuItem";
-            this.удалитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(213, 30);
+            this.удалитьАвтобусToolStripMenuItem.Size = new System.Drawing.Size(205, 30);
             this.удалитьАвтобусToolStripMenuItem.Text = "Удалить автобус";
             this.удалитьАвтобусToolStripMenuItem.Click += new System.EventHandler(this.удалитьАвтобусToolStripMenuItem_Click);
             // 
             // busBindingSource
             // 
             this.busBindingSource.DataSource = typeof(CarPark.Bus);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(106)))), ((int)(((byte)(102)))));
-            this.panel1.Location = new System.Drawing.Point(0, 32);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 44);
-            this.panel1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(51, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(390, 29);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CarPark.Properties.Resources.magnifying_glass;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 34);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справочникиToolStripMenuItem,
-            this.информацияПоЗапросуToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(963, 32);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.MouseLeave += new System.EventHandler(this.menuStrip1_MouseLeave);
             // 
             // справочникиToolStripMenuItem
             // 
@@ -307,7 +346,7 @@
             this.справочникиToolStripMenuItem.Image = global::CarPark.Properties.Resources.files;
             this.справочникиToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
-            this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(167, 28);
+            this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(136, 28);
             this.справочникиToolStripMenuItem.Text = "Справочники";
             this.справочникиToolStripMenuItem.DropDownClosed += new System.EventHandler(this.справочникиToolStripMenuItem_DropDownClosed);
             this.справочникиToolStripMenuItem.DropDownOpened += new System.EventHandler(this.справочникиToolStripMenuItem_DropDownOpened);
@@ -318,7 +357,7 @@
             this.водителиToolStripMenuItem.Image = global::CarPark.Properties.Resources.driver;
             this.водителиToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.водителиToolStripMenuItem.Name = "водителиToolStripMenuItem";
-            this.водителиToolStripMenuItem.Size = new System.Drawing.Size(295, 30);
+            this.водителиToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.водителиToolStripMenuItem.Text = "Водители автопарка";
             this.водителиToolStripMenuItem.Click += new System.EventHandler(this.водителиToolStripMenuItem_Click);
             // 
@@ -328,7 +367,7 @@
             this.типыАвтобусовToolStripMenuItem.Image = global::CarPark.Properties.Resources.bus;
             this.типыАвтобусовToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.типыАвтобусовToolStripMenuItem.Name = "типыАвтобусовToolStripMenuItem";
-            this.типыАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(295, 30);
+            this.типыАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.типыАвтобусовToolStripMenuItem.Text = "Типы автобусов";
             this.типыАвтобусовToolStripMenuItem.Click += new System.EventHandler(this.типыАвтобусовToolStripMenuItem_Click);
             // 
@@ -338,7 +377,7 @@
             this.состояниеАвтобусовToolStripMenuItem.Image = global::CarPark.Properties.Resources.pin;
             this.состояниеАвтобусовToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.состояниеАвтобусовToolStripMenuItem.Name = "состояниеАвтобусовToolStripMenuItem";
-            this.состояниеАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(295, 30);
+            this.состояниеАвтобусовToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
             this.состояниеАвтобусовToolStripMenuItem.Text = "Состояние автобусов";
             this.состояниеАвтобусовToolStripMenuItem.Click += new System.EventHandler(this.состояниеАвтобусовToolStripMenuItem_Click);
             // 
@@ -354,7 +393,7 @@
             this.информацияПоЗапросуToolStripMenuItem.Image = global::CarPark.Properties.Resources.search;
             this.информацияПоЗапросуToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.информацияПоЗапросуToolStripMenuItem.Name = "информацияПоЗапросуToolStripMenuItem";
-            this.информацияПоЗапросуToolStripMenuItem.Size = new System.Drawing.Size(267, 28);
+            this.информацияПоЗапросуToolStripMenuItem.Size = new System.Drawing.Size(217, 28);
             this.информацияПоЗапросуToolStripMenuItem.Text = "Информация по запросу";
             this.информацияПоЗапросуToolStripMenuItem.DropDownClosed += new System.EventHandler(this.информацияПоЗапросуToolStripMenuItem_DropDownClosed);
             this.информацияПоЗапросуToolStripMenuItem.DropDownOpened += new System.EventHandler(this.информацияПоЗапросуToolStripMenuItem_DropDownOpened);
@@ -366,7 +405,7 @@
             this.свободныеАвтобусыToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_delivery_time_24;
             this.свободныеАвтобусыToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.свободныеАвтобусыToolStripMenuItem.Name = "свободныеАвтобусыToolStripMenuItem";
-            this.свободныеАвтобусыToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.свободныеАвтобусыToolStripMenuItem.Size = new System.Drawing.Size(257, 30);
             this.свободныеАвтобусыToolStripMenuItem.Text = "Свободные автобусы";
             this.свободныеАвтобусыToolStripMenuItem.Click += new System.EventHandler(this.свободныеАвтобусыToolStripMenuItem_Click);
             // 
@@ -376,7 +415,7 @@
             this.автобусыВРейсеToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_three_way_direction_24;
             this.автобусыВРейсеToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.автобусыВРейсеToolStripMenuItem.Name = "автобусыВРейсеToolStripMenuItem";
-            this.автобусыВРейсеToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.автобусыВРейсеToolStripMenuItem.Size = new System.Drawing.Size(257, 30);
             this.автобусыВРейсеToolStripMenuItem.Text = "Автобусы в рейсе";
             this.автобусыВРейсеToolStripMenuItem.Click += new System.EventHandler(this.автобусыВРейсеToolStripMenuItem_Click);
             // 
@@ -386,7 +425,7 @@
             this.автобусыВРемонтеToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_maintenance_24;
             this.автобусыВРемонтеToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.автобусыВРемонтеToolStripMenuItem.Name = "автобусыВРемонтеToolStripMenuItem";
-            this.автобусыВРемонтеToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.автобусыВРемонтеToolStripMenuItem.Size = new System.Drawing.Size(257, 30);
             this.автобусыВРемонтеToolStripMenuItem.Text = "Автобусы в ремонте";
             this.автобусыВРемонтеToolStripMenuItem.Click += new System.EventHandler(this.автобусыВРемонтеToolStripMenuItem_Click);
             // 
@@ -396,7 +435,7 @@
             this.списанныеАвтобусыToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_sync_settings_24;
             this.списанныеАвтобусыToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.списанныеАвтобусыToolStripMenuItem.Name = "списанныеАвтобусыToolStripMenuItem";
-            this.списанныеАвтобусыToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.списанныеАвтобусыToolStripMenuItem.Size = new System.Drawing.Size(257, 30);
             this.списанныеАвтобусыToolStripMenuItem.Text = "Списанные автобусы";
             this.списанныеАвтобусыToolStripMenuItem.Click += new System.EventHandler(this.списанныеАвтобусыToolStripMenuItem_Click);
             // 
@@ -406,45 +445,15 @@
             this.всеАвтобусыАвтопаркаToolStripMenuItem.Image = global::CarPark.Properties.Resources.bus__2_;
             this.всеАвтобусыАвтопаркаToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.всеАвтобусыАвтопаркаToolStripMenuItem.Name = "всеАвтобусыАвтопаркаToolStripMenuItem";
-            this.всеАвтобусыАвтопаркаToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.всеАвтобусыАвтопаркаToolStripMenuItem.Size = new System.Drawing.Size(257, 30);
             this.всеАвтобусыАвтопаркаToolStripMenuItem.Text = "Все автобусы автопарка";
             this.всеАвтобусыАвтопаркаToolStripMenuItem.Click += new System.EventHandler(this.всеАвтобусыАвтопаркаToolStripMenuItem_Click);
             // 
-            // CountLable
-            // 
-            this.CountLable.AutoSize = true;
-            this.CountLable.Location = new System.Drawing.Point(680, 4);
-            this.CountLable.Name = "CountLable";
-            this.CountLable.Size = new System.Drawing.Size(180, 24);
-            this.CountLable.TabIndex = 3;
-            this.CountLable.Text = "Общее количество";
-            // 
-            // TotalCount
-            // 
-            this.TotalCount.AutoSize = true;
-            this.TotalCount.Location = new System.Drawing.Point(866, 4);
-            this.TotalCount.Name = "TotalCount";
-            this.TotalCount.Size = new System.Drawing.Size(20, 24);
-            this.TotalCount.TabIndex = 4;
-            this.TotalCount.Text = "0";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(684, 7);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "undo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FormCarPark
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 784);
-            this.Controls.Add(this.TotalCount);
-            this.Controls.Add(this.CountLable);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
@@ -457,12 +466,12 @@
             this.Text = "Учет наличия транспортных средств (автобусы) в автопарке";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.busBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
