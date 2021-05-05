@@ -208,30 +208,50 @@ namespace CarPark
         {
             var queryEmptyBus = db.Bus.Where(bus => bus.Condition.Name == "На базе");
             dataGridView1.DataSource = queryEmptyBus.ToList();
+
+            ScriptScope scope = engine.CreateScope();
+            scope.SetVariable("count", dataGridView1.RowCount);
+            TotalCount.Text = scope.GetVariable("count").ToString();
         }
 
         private void автобусыВРейсеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var queryInFlightBus = db.Bus.Where(bus => bus.Condition.Name == "В рейсе");
             dataGridView1.DataSource = queryInFlightBus.ToList();
+
+            ScriptScope scope = engine.CreateScope();
+            scope.SetVariable("count", dataGridView1.RowCount);
+            TotalCount.Text = scope.GetVariable("count").ToString();
         }
 
         private void автобусыВРемонтеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var queryUnderRepair = db.Bus.Where(bus => bus.Condition.Name == "В ремонте");
             dataGridView1.DataSource = queryUnderRepair.ToList();
+
+            ScriptScope scope = engine.CreateScope();
+            scope.SetVariable("count", dataGridView1.RowCount);
+            TotalCount.Text = scope.GetVariable("count").ToString();
         }
 
         private void списанныеАвтобусыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var queryDecommissioned = db.Bus.Where(bus => bus.Condition.Name == "Списан");
             dataGridView1.DataSource = queryDecommissioned.ToList();
+
+            ScriptScope scope = engine.CreateScope();
+            scope.SetVariable("count", dataGridView1.RowCount);
+            TotalCount.Text = scope.GetVariable("count").ToString();
         }
 
         private void всеАвтобусыАвтопаркаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var all = db.Bus.Select(allBus => allBus);
             dataGridView1.DataSource = all.ToList();
+
+            ScriptScope scope = engine.CreateScope();
+            scope.SetVariable("count", dataGridView1.RowCount);
+            TotalCount.Text = scope.GetVariable("count").ToString();
         }
 
         private void информацияПоЗапросуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -319,6 +339,41 @@ namespace CarPark
             }
             else
                 MessageBox.Show("Нет последних изменений.", "Автобусы", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void отсортироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void поМаркеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[1].SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void поКоличествуМестToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[4].SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void поГосударственномуНомеруToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[5].SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void поСостояниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[6].SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void поТипуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[7].SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void поВодителямToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Columns[8].SortMode = DataGridViewColumnSortMode.Automatic;
         }
     }
 
