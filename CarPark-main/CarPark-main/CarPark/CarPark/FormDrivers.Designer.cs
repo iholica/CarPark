@@ -191,7 +191,7 @@
             this.изменитьВодителяToolStripMenuItem,
             this.удалитьВодителяToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(224, 94);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
             // 
             // добавитьВодителяToolStripMenuItem
             // 
@@ -199,7 +199,7 @@
             this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
             this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
-            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
             this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
             this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
             // 
@@ -209,7 +209,7 @@
             this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
             this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
-            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
             this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
             this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
             // 
@@ -219,7 +219,7 @@
             this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
             this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
-            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
             this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
             this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
             // 
@@ -229,17 +229,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(878, 12);
+            this.button1.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.button1.Location = new System.Drawing.Point(819, 56);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
+            this.button1.Size = new System.Drawing.Size(36, 26);
             this.button1.TabIndex = 1;
-            this.button1.Text = "undo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormDrivers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 493);
             this.Controls.Add(this.button1);
