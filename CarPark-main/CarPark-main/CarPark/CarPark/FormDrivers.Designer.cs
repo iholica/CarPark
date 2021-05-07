@@ -34,6 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDrivers));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.добавитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изменитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,12 +47,7 @@
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.experienceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.busDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.добавитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьВодителяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).BeginInit();
@@ -108,6 +108,58 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(953, 493);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьВодителяToolStripMenuItem,
+            this.изменитьВодителяToolStripMenuItem,
+            this.удалитьВодителяToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CarPark.Properties.Resources.free_icon_back_arrow_1174481;
+            this.button1.Location = new System.Drawing.Point(925, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // добавитьВодителяToolStripMenuItem
+            // 
+            this.добавитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
+            this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
+            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
+            this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
+            // 
+            // изменитьВодителяToolStripMenuItem
+            // 
+            this.изменитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
+            this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
+            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
+            this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
+            // 
+            // удалитьВодителяToolStripMenuItem
+            // 
+            this.удалитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
+            this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
+            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
+            this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
+            this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -183,59 +235,9 @@
             this.busDataGridViewTextBoxColumn.Visible = false;
             this.busDataGridViewTextBoxColumn.Width = 150;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьВодителяToolStripMenuItem,
-            this.изменитьВодителяToolStripMenuItem,
-            this.удалитьВодителяToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 94);
-            // 
-            // добавитьВодителяToolStripMenuItem
-            // 
-            this.добавитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
-            this.добавитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_plus_24;
-            this.добавитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.добавитьВодителяToolStripMenuItem.Name = "добавитьВодителяToolStripMenuItem";
-            this.добавитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.добавитьВодителяToolStripMenuItem.Text = "Добавить водителя";
-            this.добавитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.добавитьВодителяToolStripMenuItem_Click);
-            // 
-            // изменитьВодителяToolStripMenuItem
-            // 
-            this.изменитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
-            this.изменитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_pencil_drawing_24;
-            this.изменитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.изменитьВодителяToolStripMenuItem.Name = "изменитьВодителяToolStripMenuItem";
-            this.изменитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.изменитьВодителяToolStripMenuItem.Text = "Изменить водителя";
-            this.изменитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.изменитьВодителяToolStripMenuItem_Click);
-            // 
-            // удалитьВодителяToolStripMenuItem
-            // 
-            this.удалитьВодителяToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
-            this.удалитьВодителяToolStripMenuItem.Image = global::CarPark.Properties.Resources.icons8_waste_24;
-            this.удалитьВодителяToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.удалитьВодителяToolStripMenuItem.Name = "удалитьВодителяToolStripMenuItem";
-            this.удалитьВодителяToolStripMenuItem.Size = new System.Drawing.Size(214, 30);
-            this.удалитьВодителяToolStripMenuItem.Text = "Удалить водителя";
-            this.удалитьВодителяToolStripMenuItem.Click += new System.EventHandler(this.удалитьВодителяToolStripMenuItem_Click);
-            // 
             // driverBindingSource
             // 
             this.driverBindingSource.DataSource = typeof(CarPark.Driver);
-            // 
-            // button1
-            // 
-            this.button1.Image = global::CarPark.Properties.Resources.icons8_plus_24;
-            this.button1.Location = new System.Drawing.Point(819, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 26);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormDrivers
             // 

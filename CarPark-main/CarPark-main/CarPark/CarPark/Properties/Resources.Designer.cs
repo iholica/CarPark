@@ -113,6 +113,16 @@ namespace CarPark.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_back_arrow_11744811 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-back-arrow-11744811", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delivery_time_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delivery-time-24", resourceCulture);
